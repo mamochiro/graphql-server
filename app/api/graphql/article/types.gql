@@ -1,0 +1,33 @@
+type Article {
+  id: Int!
+  title: String!
+  thumbnail: String
+  cover: String!
+  description: String!
+  content: String!
+  published: Boolean
+  state: Boolean
+  createdAt: Date
+  updatedAt: Date
+  publishedAt: Date
+  deletedAt: Date
+}
+
+
+input CreateArticleInput {
+  title: String!
+  thumbnail: Upload!
+  cover: Upload!
+  description: String!
+  content: String
+  tags: [Int]
+  published: Boolean
+}
+
+type Query {
+  article: Article
+}
+
+type Mutation {
+  createArticel(input: CreateArticleInput) : Article
+}
